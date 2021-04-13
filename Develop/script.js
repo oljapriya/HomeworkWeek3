@@ -1,8 +1,6 @@
 // Assignment Code
-var specialCharacters = "!@#$%^&*()";
 var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -10,6 +8,8 @@ function writePassword() {
 
   passwordText.value = password;
 }
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 //prompts that come up when yuo click generate password
 function generatePassword() {
@@ -39,7 +39,8 @@ function generatePassword() {
       return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
     getSpacialCharacters: function () {
-      return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+      const symbols = "!@#$%^&*()_+{}[]<>?,."
+      return symbols[Math.floor(Math.random() * symbols.length)]
     }
   };
 
